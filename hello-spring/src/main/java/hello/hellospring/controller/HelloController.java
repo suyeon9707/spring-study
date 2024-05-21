@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class helloController {
+public class HelloController {
 
 	@GetMapping("hello")
 	public String hello(Model model) {
