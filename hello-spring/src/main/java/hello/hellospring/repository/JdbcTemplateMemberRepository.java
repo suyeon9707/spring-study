@@ -6,7 +6,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
-
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -31,8 +30,7 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
 		Map<String, Object> parameters = new HashMap<>();
 		parameters.put("name", member.getName());
 
-		Number key = jdbcInsert.executeAndReturnKey(new
-				MapSqlParameterSource(parameters));
+		Number key = jdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
 		member.setId(key.longValue());
 		return member;
 	}
